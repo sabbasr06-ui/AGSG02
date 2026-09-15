@@ -1,6 +1,6 @@
 
-
 book = {}
+
 
 def display_menu():
     print("\n======= Personal Library Manager =======")
@@ -10,22 +10,25 @@ def display_menu():
     print("4. search a book title")
     print("5. exit")
 
+
 def main():
     display_menu()
 
     choice = input("Enter your choice: ")
+
     if choice == "1":
-        title = input("Enter the book title:")
-        Author = input("Enter the Author:")
-        Year = input("Enter the Year:")
+        title = input("Enter the book title: ")
+        Author = input("Enter the Author: ")
+        Year = input("Enter the Year: ")
 
         book[title] = {
             "Author": Author,
             "Year": Year
         }
+
         print("Book added.")
 
-        
 
 if __name__ == "__main__":
     main()
+
