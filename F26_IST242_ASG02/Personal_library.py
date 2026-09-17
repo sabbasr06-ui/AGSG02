@@ -24,8 +24,14 @@ def main():
             "Year": Year
         }
         print("Book added.")
-
-        
+    if choice == "2":
+        title = input("Enter the book title to remove:")
+        if title in book:
+            del book[title]
+            print("book removed")
+        else:
+            print("error: enter the correct book title")
+    
 
 if __name__ == "__main__":
     main()
