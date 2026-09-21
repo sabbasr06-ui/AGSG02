@@ -39,6 +39,15 @@ def main():
             print("book removed")
         else:
             print("error: enter the correct book title")
+    if choice == "3":
+        for title, details in book.items():
+            print(title, details)
+    if choice == "4":
+        title = input("Enter the book title to search:")
+        if title in book:
+            print(title, book[title])
+        else:
+            print("Book not found.")
     
 
 if __name__ == "__main__":
