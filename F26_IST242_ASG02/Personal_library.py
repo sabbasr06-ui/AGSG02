@@ -10,7 +10,15 @@ def display_menu():
     print("4. search a book title")
     print("5. exit")
 
+
+    def add_book(title, Author, Year):
+        book[title] = {
+            "Author": Author,
+            "Year": Year
+        }
+
 def main():
+ while True:
     display_menu()
 
     choice = input("Enter your choice: ")
