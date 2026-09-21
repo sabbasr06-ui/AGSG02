@@ -48,7 +48,12 @@ def main():
             print(title, book[title])
         else:
             print("Book not found.")
-    
+    if choice == "5":
+        print("goodbye")
+        break
+
+    else:
+        print("error choice please enter 1-5 thank you.")
 
 if __name__ == "__main__":
     main()
