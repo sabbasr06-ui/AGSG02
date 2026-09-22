@@ -38,3 +38,11 @@ def test_duplicate_book():
     add_book("The Hobbit", "J.R.R. Tolkien", "1937")
 
     assert len(book) == 1
+
+    test_add_book()
+    test_add_multiple_books()
+    test_book_information()
+    test_duplicate_book()
+print("Test passed!")
+
+#i used Ai for the test cases
