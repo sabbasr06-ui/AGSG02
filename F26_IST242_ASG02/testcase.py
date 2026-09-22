@@ -1,34 +1,40 @@
-
-book = {}
-
-
-def display_menu():
-    print("\n======= Personal Library Manager =======")
-    print("1. Add a book title")
-    print("2. remove a book title")
-    print("3. list all book titles")
-    print("4. search a book title")
-    print("5. exit")
+from Personal_library import book, add_book
 
 
-def main():
-    display_menu()
+def test_add_book():
+    book.clear()
 
-    choice = input("Enter your choice: ")
+    add_book("The Hobbit", "J.R.R. Tolkien", "1937")
 
-    if choice == "1":
-        title = input("Enter the book title: ")
-        Author = input("Enter the Author: ")
-        Year = input("Enter the Year: ")
-
-        book[title] = {
-            "Author": Author,
-            "Year": Year
-        }
-
-        print("Book added.")
+    assert "The Hobbit" in book
+    assert book["The Hobbit"]["Author"] == "J.R.R. Tolkien"
+    assert book["The Hobbit"]["Year"] == "1937"
 
 
-if __name__ == "__main__":
-    main()
+def test_add_multiple_books():
+    book.clear()
 
+    add_book("The Hobbit", "J.R.R. Tolkien", "1937")
+    add_book("Harry Potter", "J.K. Rowling", "1997")
+
+    assert "The Hobbit" in book
+    assert "Harry Potter" in book
+    assert len(book) == 2
+
+
+def test_book_information():
+    book.clear()
+
+    add_book("1984", "George Orwell", "1949")
+
+    assert book["1984"]["Author"] == "George Orwell"
+    assert book["1984"]["Year"] == "1949"
+
+
+def test_duplicate_book():
+    book.clear()
+
+    add_book("The Hobbit", "J.R.R. Tolkien", "1937")
+    add_book("The Hobbit", "J.R.R. Tolkien", "1937")
+
+    assert len(book) == 1
